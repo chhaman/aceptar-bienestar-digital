@@ -16,54 +16,157 @@ const categorias = [
   { nombre: "Concentración", id: "concentracion" }
 ];
 
-const ejercicios = [
+export const ejercicios = [
   {
+    id: "respiracion-478",
     titulo: "Respiración 4-7-8",
     categoria: "Respiración",
     categoriaId: "respiracion",
     descripcion: "Técnica de respiración para calmar el sistema nervioso y reducir la ansiedad.",
-    duracion: "5 minutos",
-    nivel: "Principiante"
+    duracion: "5",
+    nivel: "Principiante",
+    instrucciones: [
+      "Siéntate en una posición cómoda con la espalda recta.",
+      "Coloca la punta de la lengua detrás de los dientes frontales superiores.",
+      "Exhala completamente por la boca, haciendo un sonido suave de 'whoosh'.",
+      "Cierra la boca e inhala silenciosamente por la nariz contando hasta 4.",
+      "Mantén la respiración contando hasta 7.",
+      "Exhala completamente por la boca, haciendo un sonido de 'whoosh', contando hasta 8.",
+      "Repite este ciclo 3-4 veces."
+    ],
+    beneficios: [
+      "Ayuda a reducir la ansiedad y el estrés",
+      "Facilita el sueño reparador",
+      "Regula la respuesta del sistema nervioso",
+      "Mejora la concentración",
+      "Reduce la tensión muscular"
+    ]
   },
   {
+    id: "relajacion-muscular",
     titulo: "Relajación muscular progresiva",
     categoria: "Relajación",
     categoriaId: "relajacion",
     descripcion: "Aprende a tensar y relajar grupos musculares para liberar tensión física y mental.",
-    duracion: "15 minutos",
-    nivel: "Intermedio"
+    duracion: "15",
+    nivel: "Intermedio",
+    instrucciones: [
+      "Acuéstate en una superficie cómoda.",
+      "Comienza por los pies: tensa los músculos de los pies durante 5 segundos, luego relaja.",
+      "Sube a las pantorrillas: tensa durante 5 segundos, luego relaja.",
+      "Continúa subiendo por el cuerpo (muslos, glúteos, abdomen, pecho, brazos, manos, hombros, cuello y cara).",
+      "Para cada grupo muscular, tensa durante 5 segundos y relaja durante 10 segundos.",
+      "Nota el contraste entre la tensión y la relajación.",
+      "Al finalizar, mantén todo el cuerpo relajado durante un minuto."
+    ],
+    beneficios: [
+      "Reduce la tensión muscular crónica",
+      "Disminuye los niveles de ansiedad",
+      "Mejora la calidad del sueño",
+      "Alivia dolores de cabeza relacionados con la tensión",
+      "Incrementa la conciencia corporal"
+    ]
   },
   {
+    id: "estiramiento-consciente",
     titulo: "Estiramiento consciente",
     categoria: "Movimiento",
     categoriaId: "movimiento",
     descripcion: "Serie de estiramientos suaves acompañados de atención plena a las sensaciones corporales.",
-    duracion: "10 minutos",
-    nivel: "Principiante"
+    duracion: "10",
+    nivel: "Principiante",
+    instrucciones: [
+      "Comienza de pie o sentado cómodamente, con la espalda recta.",
+      "Levanta los brazos lentamente por encima de la cabeza y estira todo el cuerpo hacia arriba.",
+      "Manteniendo la respiración profunda, inclina el cuerpo suavemente hacia un lado y mantén 3 respiraciones.",
+      "Repite hacia el otro lado.",
+      "Inclínate hacia adelante desde la cadera, manteniendo la espalda recta, y permite que los brazos cuelguen.",
+      "En cada posición, observa las sensaciones sin juzgarlas.",
+      "Finaliza de pie, con los brazos a los costados, respirando profundamente."
+    ],
+    beneficios: [
+      "Incrementa la flexibilidad y movilidad",
+      "Reduce la tensión muscular",
+      "Mejora la postura",
+      "Aumenta la conexión mente-cuerpo",
+      "Promueve la relajación profunda"
+    ]
   },
   {
+    id: "diario-emocional",
     titulo: "Diario emocional guiado",
     categoria: "Expresión",
     categoriaId: "expresion",
     descripcion: "Ejercicio de escritura para identificar y procesar emociones a través de preguntas reflexivas.",
-    duracion: "20 minutos",
-    nivel: "Todos los niveles"
+    duracion: "20",
+    nivel: "Todos los niveles",
+    instrucciones: [
+      "Encuentra un lugar tranquilo y toma un cuaderno y bolígrafo.",
+      "Cierra los ojos y respira profundamente durante un minuto, conectando con tu estado emocional actual.",
+      "Responde estas preguntas escribiendo libremente, sin juzgar lo que surja:",
+      "¿Qué emoción predomina hoy en mí? ¿Dónde la siento en mi cuerpo?",
+      "¿Qué situación activó esta emoción? Descríbela objetivamente.",
+      "¿Qué necesidad está expresando esta emoción?",
+      "¿Qué acción puedo tomar para atender esta necesidad?",
+      "Al terminar, lee lo que has escrito y observa si hay nuevos insights."
+    ],
+    beneficios: [
+      "Facilita la identificación y expresión emocional",
+      "Reduce la intensidad de emociones difíciles",
+      "Aumenta el autoconocimiento",
+      "Desarrolla la inteligencia emocional",
+      "Proporciona perspectiva sobre situaciones complejas"
+    ]
   },
   {
+    id: "meditacion-5-sentidos",
     titulo: "Meditación de los 5 sentidos",
     categoria: "Concentración",
     categoriaId: "concentracion",
     descripcion: "Práctica de mindfulness enfocada en las percepciones sensoriales del momento presente.",
-    duracion: "8 minutos",
-    nivel: "Principiante"
+    duracion: "8",
+    nivel: "Principiante",
+    instrucciones: [
+      "Siéntate en una posición cómoda y cierra los ojos.",
+      "Comienza notando 5 cosas que puedes ESCUCHAR. Identifícalas mentalmente una por una.",
+      "Luego, observa 4 cosas que puedes SENTIR en contacto con tu cuerpo (ropa, aire, etc.).",
+      "Después, identifica 3 cosas que puedes OLER en este momento.",
+      "Continúa con 2 cosas que puedes SABOREAR (incluso el sabor de tu boca).",
+      "Finalmente, abre los ojos y observa 1 cosa que puedes VER, explorándola con atención plena.",
+      "Termina con tres respiraciones profundas."
+    ],
+    beneficios: [
+      "Ancla la mente al momento presente",
+      "Reduce la rumia mental y preocupaciones",
+      "Agudiza la conciencia sensorial",
+      "Disminuye la ansiedad rápidamente",
+      "Desarrolla la capacidad de atención plena"
+    ]
   },
   {
+    id: "visualizacion-lugar-seguro",
     titulo: "Visualización de lugar seguro",
     categoria: "Relajación",
     categoriaId: "relajacion",
     descripcion: "Técnica de visualización para crear un refugio mental que genere calma y seguridad.",
-    duracion: "12 minutos",
-    nivel: "Principiante"
+    duracion: "12",
+    nivel: "Principiante",
+    instrucciones: [
+      "Siéntate o acuéstate cómodamente en un lugar tranquilo.",
+      "Cierra los ojos y toma varias respiraciones profundas para relajarte.",
+      "Imagina un lugar donde te sientes completamente seguro y en paz (real o imaginario).",
+      "Involucra todos los sentidos: ¿Qué ves en este lugar? ¿Qué sonidos hay? ¿Qué puedes oler y sentir?",
+      "Explora este lugar con curiosidad, notando cada detalle que te brinda seguridad y confort.",
+      "Cuando sientas que este lugar está bien definido, imagina que cada respiración te conecta más profundamente con él.",
+      "Antes de terminar, decide una palabra o gesto que te permita acceder a este lugar rápidamente en el futuro."
+    ],
+    beneficios: [
+      "Proporciona un refugio mental accesible en momentos de estrés",
+      "Reduce la activación del sistema nervioso simpático",
+      "Genera sensaciones de seguridad y calma",
+      "Ayuda a manejar síntomas de ansiedad y pánico",
+      "Fortalece la capacidad de autorregulación emocional"
+    ]
   }
 ];
 
@@ -144,12 +247,13 @@ const Ejercicios = () => {
                     <p className="text-gray-600 mb-4">{ejercicio.descripcion}</p>
                     
                     <div className="flex justify-between items-center mb-4 text-sm text-gray-500">
-                      <span>{ejercicio.duracion}</span>
+                      <span>{ejercicio.duracion} minutos</span>
                       <span>{ejercicio.nivel}</span>
                     </div>
                     
                     <Button 
                       className="w-full bg-aceptar-purple hover:bg-aceptar-dark-purple flex items-center justify-center gap-2"
+                      onClick={() => navigate(`/ejercicios/detalle/${ejercicio.id}`)}
                     >
                       <CheckCircleIcon className="h-4 w-4" />
                       Comenzar ejercicio

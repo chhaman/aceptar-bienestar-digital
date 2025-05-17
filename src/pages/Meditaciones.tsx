@@ -5,41 +5,80 @@ import BackButton from '@/components/BackButton';
 import { Card, CardContent } from '@/components/ui/card';
 import { BrainIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
-const meditaciones = [
+export const meditaciones = [
   {
+    id: "ansiedad",
     titulo: "Meditación para la ansiedad",
-    duracion: "10 minutos",
-    descripcion: "Una práctica guiada para calmar la mente y reducir la ansiedad."
+    duracion: "10",
+    descripcion: "Una práctica guiada para calmar la mente y reducir la ansiedad.",
+    instrucciones: [
+      "Busca un lugar tranquilo donde no serás interrumpido",
+      "Siéntate en una posición cómoda con la espalda recta",
+      "Cierra los ojos y conecta con tu respiración"
+    ]
   },
   {
+    id: "respiracion-consciente",
     titulo: "Respiración consciente",
-    duracion: "5 minutos",
-    descripcion: "Técnica de respiración para momentos de estrés."
+    duracion: "5",
+    descripcion: "Técnica de respiración para momentos de estrés.",
+    instrucciones: [
+      "Siéntate cómodamente con la espalda erguida",
+      "Respira por la nariz, llenando primero el abdomen y luego el pecho",
+      "Exhala lentamente por la boca, vaciando primero el pecho y luego el abdomen"
+    ]
   },
   {
+    id: "escaner-corporal",
     titulo: "Escáner corporal",
-    duracion: "15 minutos",
-    descripcion: "Meditación para reconectar con las sensaciones de tu cuerpo."
+    duracion: "15",
+    descripcion: "Meditación para reconectar con las sensaciones de tu cuerpo.",
+    instrucciones: [
+      "Acuéstate boca arriba en una superficie cómoda",
+      "Comienza focalizando tu atención en los dedos de los pies",
+      "Sube gradualmente por todo el cuerpo, notando las sensaciones en cada parte"
+    ]
   },
   {
+    id: "dormir",
     titulo: "Meditación para dormir",
-    duracion: "20 minutos",
-    descripcion: "Práctica relajante para preparar el cuerpo y la mente para un sueño reparador."
+    duracion: "20",
+    descripcion: "Práctica relajante para preparar el cuerpo y la mente para un sueño reparador.",
+    instrucciones: [
+      "Acuéstate en la posición en que normalmente duermes",
+      "Realiza respiraciones lentas y profundas",
+      "Visualiza que cada exhalación libera la tensión acumulada durante el día"
+    ]
   },
   {
+    id: "presente",
     titulo: "Centrarse en el presente",
-    duracion: "8 minutos",
-    descripcion: "Ejercicio para volver al momento presente y dejar ir preocupaciones."
+    duracion: "8",
+    descripcion: "Ejercicio para volver al momento presente y dejar ir preocupaciones.",
+    instrucciones: [
+      "Siéntate cómodamente y cierra los ojos",
+      "Observa los pensamientos como si fueran nubes pasando por el cielo",
+      "Cada vez que te distraigas, vuelve suavemente a tu respiración"
+    ]
   },
   {
+    id: "gratitud",
     titulo: "Cultivar la gratitud",
-    duracion: "12 minutos",
-    descripcion: "Meditación para desarrollar y fortalecer el sentimiento de gratitud."
+    duracion: "12",
+    descripcion: "Meditación para desarrollar y fortalecer el sentimiento de gratitud.",
+    instrucciones: [
+      "Siéntate en una posición cómoda con las manos sobre el corazón",
+      "Trae a tu mente tres cosas por las que te sientas agradecido hoy",
+      "Con cada respiración, siente cómo la gratitud se expande en tu pecho"
+    ]
   }
 ];
 
 const Meditaciones = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gradient-bg pb-16">
       <Header />
@@ -64,12 +103,13 @@ const Meditaciones = () => {
                   <div className="flex items-start justify-between mb-3">
                     <h3 className="text-xl font-semibold text-aceptar-dark-purple">{meditacion.titulo}</h3>
                     <span className="px-2 py-1 bg-aceptar-light-purple/30 text-aceptar-purple rounded text-sm">
-                      {meditacion.duracion}
+                      {meditacion.duracion} minutos
                     </span>
                   </div>
                   <p className="text-gray-600 mb-4">{meditacion.descripcion}</p>
                   <Button 
                     className="w-full bg-aceptar-purple hover:bg-aceptar-dark-purple"
+                    onClick={() => navigate(`/meditaciones/${meditacion.id}`)}
                   >
                     Comenzar
                   </Button>

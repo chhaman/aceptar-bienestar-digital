@@ -12,7 +12,7 @@ const BackButton = () => {
       variant="ghost" 
       size="icon"
       onClick={() => navigate(-1)}
-      className="absolute left-4 top-24 z-10"
+      className="fixed left-4 top-20 z-10 bg-white/80 backdrop-blur-sm shadow-sm hover:bg-white"
       aria-label="Volver"
     >
       <ArrowLeftIcon className="h-6 w-6 text-aceptar-purple" />

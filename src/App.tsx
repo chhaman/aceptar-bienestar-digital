@@ -12,6 +12,9 @@ import Ejercicios from "./pages/Ejercicios";
 import NotFound from "./pages/NotFound";
 import BottomNav from "./components/BottomNav";
 import ScrollToTop from "./components/ScrollToTop";
+import EjercicioDetalle from "./pages/EjercicioDetalle";
+import MeditacionDetalle from "./pages/MeditacionDetalle";
+import ArticuloDetalle from "./pages/ArticuloDetalle";
 
 const queryClient = new QueryClient();
 
@@ -25,10 +28,13 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/meditaciones" element={<Meditaciones />} />
+          <Route path="/meditaciones/:id" element={<MeditacionDetalle />} />
           <Route path="/articulos" element={<Articulos />} />
+          <Route path="/articulos/:id" element={<ArticuloDetalle />} />
           <Route path="/comunidad" element={<Comunidad />} />
           <Route path="/ejercicios" element={<Ejercicios />} />
           <Route path="/ejercicios/:categoria" element={<Ejercicios />} />
+          <Route path="/ejercicios/detalle/:id" element={<EjercicioDetalle />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
