@@ -1,39 +1,49 @@
 
 import React from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-type ResourceCardProps = {
+interface ResourceCardProps {
   title: string;
   description: string;
   icon: React.ReactNode;
   buttonText: string;
   path: string;
-};
+  badge?: string;
+}
 
-const ResourceCard = ({ title, description, icon, buttonText, path }: ResourceCardProps) => {
+const ResourceCard = ({ title, description, icon, buttonText, path, badge }: ResourceCardProps) => {
+  const navigate = useNavigate();
+
   return (
-    <Card className="transition-all hover:shadow-lg h-full flex flex-col">
-      <CardHeader className="pb-2">
-        <div className="flex items-start justify-between">
-          <div className="p-2 rounded-full bg-aceptar-light-purple text-aceptar-purple">
+    <Card className="overflow-hidden border border-border shadow-sm hover:shadow-md transition-all">
+      <CardContent className="p-6">
+        <div className="flex items-center mb-4">
+          <div className="p-2 bg-aceptar-light-purple rounded-full mr-3">
             {icon}
           </div>
+          <div className="flex-1">
+            <h3 className="text-lg font-semibold text-foreground">
+              {title}
+              {badge && (
+                <span className="ml-2 inline-block px-2 py-0.5 text-xs bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-200 rounded-full">
+                  {badge}
+                </span>
+              )}
+            </h3>
+          </div>
         </div>
-        <CardTitle className="text-lg mt-2">{title}</CardTitle>
-        <CardDescription className="text-sm text-gray-600">{description}</CardDescription>
-      </CardHeader>
-      <CardContent className="pb-2 flex-grow">
-        {/* Content can be added here if needed */}
+        <p className="text-muted-foreground mb-4">
+          {description}
+        </p>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="px-6 pb-6 pt-0">
         <Button 
-          variant="outline" 
-          className="w-full border-aceptar-purple text-aceptar-dark-purple hover:bg-aceptar-purple hover:text-white"
-          asChild
+          onClick={() => navigate(path)}
+          className="w-full bg-aceptar-purple hover:bg-aceptar-dark-purple text-white"
         >
-          <Link to={path}>{buttonText}</Link>
+          {buttonText}
         </Button>
       </CardFooter>
     </Card>

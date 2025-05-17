@@ -15,10 +15,10 @@ const Index = () => {
       <main className="container mx-auto px-4 pt-24 pb-16">
         {/* Hero Section */}
         <section className="text-center mb-12 pt-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Bienvenido a <span className="text-aceptar-purple">Mentoría ACEPTAR</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Tu espacio seguro para el bienestar emocional y la salud mental.
             Juntos en el camino hacia la aceptación y el crecimiento personal.
           </p>
@@ -36,7 +36,7 @@ const Index = () => {
         
         {/* Resources Section */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-center mb-8 text-gray-800">
+          <h2 className="text-2xl font-bold text-center mb-8 text-foreground">
             Recursos para tu Bienestar
           </h2>
           
@@ -59,8 +59,9 @@ const Index = () => {
               title="Comunidad de Apoyo"
               description="Conecta con personas que comparten experiencias similares."
               icon={<MessageCircleIcon className="h-5 w-5" />}
-              buttonText="Unirse"
+              buttonText="Próximamente"
               path="/comunidad"
+              badge="Próxima versión"
             />
             <ResourceCard
               title="Ejercicios de Bienestar"
@@ -76,7 +77,7 @@ const Index = () => {
         <section className="mb-12">
           <Card className="bg-aceptar-purple/10 border-none">
             <CardContent className="py-8 px-6 text-center">
-              <blockquote className="text-xl md:text-2xl italic text-gray-700">
+              <blockquote className="text-xl md:text-2xl italic text-foreground">
                 "La aceptación es el primer paso hacia la transformación personal.
                 No podemos cambiar lo que no aceptamos."
               </blockquote>
@@ -89,10 +90,10 @@ const Index = () => {
       </main>
       
       {/* Footer */}
-      <footer className="bg-white py-6 border-t">
+      <footer className="bg-background py-6 border-t border-border">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-600">© {new Date().getFullYear()} Mentoría ACEPTAR - Todos los derechos reservados</p>
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-foreground">© {new Date().getFullYear()} Mentoría ACEPTAR - Todos los derechos reservados</p>
+          <p className="text-sm text-muted-foreground mt-2">
             Apoyando tu salud mental y bienestar emocional
           </p>
         </div>

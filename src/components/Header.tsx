@@ -1,18 +1,20 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { BrainIcon } from 'lucide-react';
+import { BrainIcon, MoonIcon, SunIcon } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { useTheme } from '@/hooks/useTheme';
 
 const Header = () => {
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
   
   const isActive = (path: string) => {
     return location.pathname === path;
   };
   
   return (
-    <header className="w-full py-4 px-6 bg-white/80 backdrop-blur-sm fixed top-0 z-10 shadow-sm">
+    <header className="w-full py-4 px-6 bg-background/80 backdrop-blur-sm fixed top-0 z-10 shadow-sm">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
           <BrainIcon className="h-6 w-6 text-aceptar-purple" />
@@ -25,7 +27,7 @@ const Header = () => {
           <Link 
             to="/" 
             className={`text-sm font-medium hover:text-aceptar-purple transition-colors ${
-              isActive('/') ? 'text-aceptar-purple' : 'text-gray-700'
+              isActive('/') ? 'text-aceptar-purple' : 'text-foreground'
             }`}
           >
             Inicio
@@ -33,7 +35,7 @@ const Header = () => {
           <Link 
             to="/meditaciones" 
             className={`text-sm font-medium hover:text-aceptar-purple transition-colors ${
-              isActive('/meditaciones') ? 'text-aceptar-purple' : 'text-gray-700'
+              isActive('/meditaciones') ? 'text-aceptar-purple' : 'text-foreground'
             }`}
           >
             Meditaciones
@@ -41,7 +43,7 @@ const Header = () => {
           <Link 
             to="/articulos" 
             className={`text-sm font-medium hover:text-aceptar-purple transition-colors ${
-              isActive('/articulos') ? 'text-aceptar-purple' : 'text-gray-700'
+              isActive('/articulos') ? 'text-aceptar-purple' : 'text-foreground'
             }`}
           >
             Artículos
@@ -49,23 +51,36 @@ const Header = () => {
           <Link 
             to="/comunidad" 
             className={`text-sm font-medium hover:text-aceptar-purple transition-colors ${
-              isActive('/comunidad') ? 'text-aceptar-purple' : 'text-gray-700'
+              isActive('/comunidad') ? 'text-aceptar-purple' : 'text-foreground'
             }`}
           >
             Comunidad
+            <span className="ml-2 px-2 py-0.5 text-xs bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-200 rounded-full">
+              Próximamente
+            </span>
           </Link>
           <Link 
             to="/ejercicios" 
             className={`text-sm font-medium hover:text-aceptar-purple transition-colors ${
-              isActive('/ejercicios') ? 'text-aceptar-purple' : 'text-gray-700'
+              isActive('/ejercicios') ? 'text-aceptar-purple' : 'text-foreground'
             }`}
           >
             Ejercicios
           </Link>
         </nav>
         
-        <Button className="bg-aceptar-purple hover:bg-aceptar-dark-purple text-white">
-          Iniciar Sesión
+        <Button 
+          variant="ghost" 
+          size="icon"
+          onClick={toggleTheme} 
+          className="bg-background/20"
+          aria-label="Cambiar tema"
+        >
+          {theme === 'dark' ? (
+            <SunIcon className="h-5 w-5" />
+          ) : (
+            <MoonIcon className="h-5 w-5" />
+          )}
         </Button>
       </div>
     </header>
