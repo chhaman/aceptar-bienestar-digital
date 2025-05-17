@@ -9,7 +9,7 @@ import { BookIcon, MessageCircleIcon, BrainIcon, HeartPulseIcon } from 'lucide-r
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-bg">
+    <div className="min-h-screen bg-gradient-bg pb-24">
       <Header />
       
       <main className="container mx-auto px-4 pt-24 pb-16">

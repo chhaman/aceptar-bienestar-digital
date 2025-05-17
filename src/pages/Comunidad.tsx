@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Header from '@/components/Header';
+import BackButton from '@/components/BackButton';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MessageCircleIcon, UsersIcon, CalendarIcon, HeartIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -46,8 +47,9 @@ const testimonios = [
 
 const Comunidad = () => {
   return (
-    <div className="min-h-screen bg-gradient-bg">
+    <div className="min-h-screen bg-gradient-bg pb-16">
       <Header />
+      <BackButton />
       
       <main className="container mx-auto px-4 pt-24 pb-16">
         <section className="text-center mb-12">

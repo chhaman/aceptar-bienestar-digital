@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Header from '@/components/Header';
+import BackButton from '@/components/BackButton';
 import { Card, CardContent } from '@/components/ui/card';
 import { BrainIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -40,8 +41,9 @@ const meditaciones = [
 
 const Meditaciones = () => {
   return (
-    <div className="min-h-screen bg-gradient-bg">
+    <div className="min-h-screen bg-gradient-bg pb-16">
       <Header />
+      <BackButton />
       
       <main className="container mx-auto px-4 pt-24 pb-16">
         <section className="text-center mb-12">
