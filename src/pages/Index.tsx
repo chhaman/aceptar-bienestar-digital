@@ -46,24 +46,28 @@ const Index = () => {
               description="Encuentra paz interior con nuestras meditaciones diarias."
               icon={<BrainIcon className="h-5 w-5" />}
               buttonText="Explorar"
+              path="/meditaciones"
             />
             <ResourceCard
               title="Artículos de Autoayuda"
               description="Lecturas para fortalecer tu salud mental y emocional."
               icon={<BookIcon className="h-5 w-5" />}
               buttonText="Leer"
+              path="/articulos"
             />
             <ResourceCard
               title="Comunidad de Apoyo"
               description="Conecta con personas que comparten experiencias similares."
               icon={<MessageCircleIcon className="h-5 w-5" />}
               buttonText="Unirse"
+              path="/comunidad"
             />
             <ResourceCard
               title="Ejercicios de Bienestar"
               description="Actividades prácticas para mejorar tu salud integral."
               icon={<HeartPulseIcon className="h-5 w-5" />}
               buttonText="Comenzar"
+              path="/ejercicios"
             />
           </div>
         </section>

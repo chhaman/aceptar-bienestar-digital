@@ -19,14 +19,45 @@ const affirmations = [
 
 const DailyAffirmation = () => {
   const [affirmation, setAffirmation] = useState("");
+  const [lastUpdated, setLastUpdated] = useState<number | null>(null);
+  
+  const getDailyAffirmation = () => {
+    const now = new Date().getTime();
+    const storedTime = localStorage.getItem('lastAffirmationTime');
+    const storedAffirmation = localStorage.getItem('dailyAffirmation');
+    
+    // Si ha pasado un día o no hay afirmación guardada, generar una nueva
+    if (!storedTime || !storedAffirmation || now - parseInt(storedTime) > 24 * 60 * 60 * 1000) {
+      const randomIndex = Math.floor(Math.random() * affirmations.length);
+      const newAffirmation = affirmations[randomIndex];
+      
+      localStorage.setItem('dailyAffirmation', newAffirmation);
+      localStorage.setItem('lastAffirmationTime', now.toString());
+      
+      setAffirmation(newAffirmation);
+      setLastUpdated(now);
+    } else {
+      setAffirmation(storedAffirmation);
+      setLastUpdated(parseInt(storedTime));
+    }
+  };
   
   const getRandomAffirmation = () => {
     const randomIndex = Math.floor(Math.random() * affirmations.length);
     setAffirmation(affirmations[randomIndex]);
+    
+    // No actualizamos localStorage para que la afirmación diaria original se mantenga
   };
   
   useEffect(() => {
-    getRandomAffirmation();
+    getDailyAffirmation();
+    
+    // Comprobar cada minuto si ha pasado un día para actualizar
+    const interval = setInterval(() => {
+      getDailyAffirmation();
+    }, 60000);
+    
+    return () => clearInterval(interval);
   }, []);
   
   return (
@@ -42,6 +73,9 @@ const DailyAffirmation = () => {
         >
           Nueva Afirmación
         </Button>
+        <p className="text-xs text-gray-500 mt-4">
+          La afirmación diaria se actualiza automáticamente cada 24 horas
+        </p>
       </CardContent>
     </Card>
   );

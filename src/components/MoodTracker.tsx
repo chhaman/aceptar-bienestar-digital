@@ -8,30 +8,60 @@ type Mood = {
   emoji: string;
   label: string;
   color: string;
+  message: string;
 };
 
 const moods: Mood[] = [
-  { emoji: "😊", label: "Feliz", color: "bg-green-100 border-green-300 text-green-800" },
-  { emoji: "😌", label: "Tranquilo", color: "bg-blue-100 border-blue-300 text-blue-800" },
-  { emoji: "😐", label: "Neutral", color: "bg-gray-100 border-gray-300 text-gray-800" },
-  { emoji: "😔", label: "Triste", color: "bg-indigo-100 border-indigo-300 text-indigo-800" },
-  { emoji: "😡", label: "Enojado", color: "bg-red-100 border-red-300 text-red-800" },
-  { emoji: "😰", label: "Ansioso", color: "bg-yellow-100 border-yellow-300 text-yellow-800" },
+  { 
+    emoji: "😊", 
+    label: "Feliz", 
+    color: "bg-green-100 border-green-300 text-green-800",
+    message: "La felicidad es una elección diaria. Celebra este momento."
+  },
+  { 
+    emoji: "😌", 
+    label: "Tranquilo", 
+    color: "bg-blue-100 border-blue-300 text-blue-800",
+    message: "La tranquilidad es el silencio de la mente. Disfruta este estado de paz."
+  },
+  { 
+    emoji: "😐", 
+    label: "Neutral", 
+    color: "bg-gray-100 border-gray-300 text-gray-800",
+    message: "El equilibrio es también un estado valioso. Ni muy arriba, ni muy abajo."
+  },
+  { 
+    emoji: "😔", 
+    label: "Triste", 
+    color: "bg-indigo-100 border-indigo-300 text-indigo-800",
+    message: "La tristeza también es parte del camino. Permítete sentir y luego avanzar."
+  },
+  { 
+    emoji: "😡", 
+    label: "Enojado", 
+    color: "bg-red-100 border-red-300 text-red-800",
+    message: "La ira es una señal para atender algo importante. Respira profundamente."
+  },
+  { 
+    emoji: "😰", 
+    label: "Ansioso", 
+    color: "bg-yellow-100 border-yellow-300 text-yellow-800",
+    message: "La ansiedad nos habla del futuro. Vuelve al presente con respiración consciente."
+  },
 ];
 
 const MoodTracker = () => {
   const [selectedMood, setSelectedMood] = useState<Mood | null>(null);
-  const [savedToday, setSavedToday] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
   
   const handleMoodSelect = (mood: Mood) => {
     setSelectedMood(mood);
+    setShowMessage(false);
   };
   
-  const handleSaveMood = () => {
+  const handleShowMessage = () => {
     if (selectedMood) {
-      console.log("Mood saved:", selectedMood);
-      setSavedToday(true);
-      // Here you would typically save to a database or local storage
+      setShowMessage(true);
     }
   };
   
@@ -62,17 +92,17 @@ const MoodTracker = () => {
         </div>
         
         <Button 
-          onClick={handleSaveMood} 
-          disabled={!selectedMood || savedToday}
+          onClick={handleShowMessage} 
+          disabled={!selectedMood}
           className="w-full bg-aceptar-purple hover:bg-aceptar-dark-purple disabled:bg-gray-300"
         >
-          {savedToday ? "Registrado Hoy" : "Guardar Estado de Ánimo"}
+          Reflexionar sobre mi estado
         </Button>
         
-        {savedToday && (
-          <p className="text-sm text-center mt-2 text-gray-600">
-            Regresa mañana para registrar tu nuevo estado de ánimo
-          </p>
+        {showMessage && selectedMood && (
+          <div className="mt-4 p-4 bg-aceptar-light-purple/20 rounded-lg border border-aceptar-purple/30">
+            <p className="text-center italic text-gray-700">"{selectedMood.message}"</p>
+          </div>
         )}
       </CardContent>
     </Card>

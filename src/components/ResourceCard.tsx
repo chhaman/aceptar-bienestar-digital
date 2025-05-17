@@ -2,15 +2,17 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 type ResourceCardProps = {
   title: string;
   description: string;
   icon: React.ReactNode;
   buttonText: string;
+  path: string;
 };
 
-const ResourceCard = ({ title, description, icon, buttonText }: ResourceCardProps) => {
+const ResourceCard = ({ title, description, icon, buttonText, path }: ResourceCardProps) => {
   return (
     <Card className="transition-all hover:shadow-lg h-full flex flex-col">
       <CardHeader className="pb-2">
@@ -26,8 +28,12 @@ const ResourceCard = ({ title, description, icon, buttonText }: ResourceCardProp
         {/* Content can be added here if needed */}
       </CardContent>
       <CardFooter>
-        <Button variant="outline" className="w-full border-aceptar-purple text-aceptar-dark-purple hover:bg-aceptar-purple hover:text-white">
-          {buttonText}
+        <Button 
+          variant="outline" 
+          className="w-full border-aceptar-purple text-aceptar-dark-purple hover:bg-aceptar-purple hover:text-white"
+          asChild
+        >
+          <Link to={path}>{buttonText}</Link>
         </Button>
       </CardFooter>
     </Card>
