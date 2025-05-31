@@ -82,11 +82,11 @@ const MoodTracker = () => {
               className={`p-3 rounded-lg border-2 transition-all ${
                 selectedMood?.label === mood.label 
                   ? `${mood.color} border-2 scale-105` 
-                  : "bg-white border-gray-200 hover:border-gray-300"
+                  : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500"
               }`}
             >
               <div className="text-2xl mb-1">{mood.emoji}</div>
-              <div className="text-sm font-medium">{mood.label}</div>
+              <div className="text-sm font-medium text-foreground">{mood.label}</div>
             </button>
           ))}
         </div>
@@ -100,8 +100,8 @@ const MoodTracker = () => {
         </Button>
         
         {showMessage && selectedMood && (
-          <div className="mt-4 p-4 bg-aceptar-light-purple/20 rounded-lg border border-aceptar-purple/30">
-            <p className="text-center italic text-gray-700">"{selectedMood.message}"</p>
+          <div className="mt-4 p-4 bg-aceptar-light-purple/20 dark:bg-aceptar-purple/20 rounded-lg border border-aceptar-purple/30">
+            <p className="text-center italic text-foreground">"{selectedMood.message}"</p>
           </div>
         )}
       </CardContent>
