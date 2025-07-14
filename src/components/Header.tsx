@@ -46,10 +46,7 @@ const Header = () => {
               isActive('/comunidad') ? 'text-aceptar-purple' : 'text-foreground'
             }`}
           >
-            Comunidad
-            <span className="ml-2 px-2 py-0.5 text-xs bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-200 rounded-full">
-              Próximamente
-            </span>
+            Cursos
           </Link>
           <Link 
             to="/ejercicios" 

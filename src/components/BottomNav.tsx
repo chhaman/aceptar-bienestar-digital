@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { HomeIcon, BrainIcon, BookIcon, UsersIcon, HeartPulseIcon } from 'lucide-react';
+import { HomeIcon, BrainIcon, BookIcon, UsersIcon, HeartPulseIcon, BookOpenCheck } from 'lucide-react';
 
 const BottomNav = () => {
   const location = useLocation();
@@ -38,11 +38,8 @@ const BottomNav = () => {
               isActive('/comunidad') ? 'text-aceptar-purple' : 'text-muted-foreground'
             }`}
           >
-            <UsersIcon className="h-6 w-6" />
-            <span className="text-xs mt-1">Comunidad</span>
-            <span className="absolute -top-1 right-0 text-[10px] px-1 py-0.5 bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-200 rounded-full">
-              Próx
-            </span>
+            <BookOpenCheck className="h-6 w-6" />
+            <span className="text-xs mt-1">Cursos</span>
           </Link>
           <Link 
             to="/ejercicios" 
