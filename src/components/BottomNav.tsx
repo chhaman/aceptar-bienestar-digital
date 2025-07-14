@@ -24,15 +24,6 @@ const BottomNav = () => {
             <span className="text-xs mt-1">Inicio</span>
           </Link>
           <Link 
-            to="/meditaciones" 
-            className={`flex flex-col items-center p-2 ${
-              isActive('/meditaciones') ? 'text-aceptar-purple' : 'text-muted-foreground'
-            }`}
-          >
-            <BrainIcon className="h-6 w-6" />
-            <span className="text-xs mt-1">Meditaciones</span>
-          </Link>
-          <Link 
             to="/articulos" 
             className={`flex flex-col items-center p-2 ${
               isActive('/articulos') ? 'text-aceptar-purple' : 'text-muted-foreground'

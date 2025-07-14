@@ -33,14 +33,6 @@ const Header = () => {
             Inicio
           </Link>
           <Link 
-            to="/meditaciones" 
-            className={`text-sm font-medium hover:text-aceptar-purple transition-colors ${
-              isActive('/meditaciones') ? 'text-aceptar-purple' : 'text-foreground'
-            }`}
-          >
-            Meditaciones
-          </Link>
-          <Link 
             to="/articulos" 
             className={`text-sm font-medium hover:text-aceptar-purple transition-colors ${
               isActive('/articulos') ? 'text-aceptar-purple' : 'text-foreground'
