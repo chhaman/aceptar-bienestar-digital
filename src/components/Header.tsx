@@ -46,7 +46,7 @@ const Header = () => {
               isActive('/comunidad') ? 'text-aceptar-purple' : 'text-foreground'
             }`}
           >
-            Cursos
+            Servicios
           </Link>
           <Link 
             to="/ejercicios" 

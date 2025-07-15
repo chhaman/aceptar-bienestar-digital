@@ -39,7 +39,7 @@ const BottomNav = () => {
             }`}
           >
             <BookOpenCheck className="h-6 w-6" />
-            <span className="text-xs mt-1">Cursos</span>
+            <span className="text-xs mt-1">Servicios</span>
           </Link>
           <Link 
             to="/ejercicios" 
